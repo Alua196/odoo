@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_table1_tree" model="ir.ui.view">
+            <field name="name">test.table1.tree</field>
+            <field name="model">test.table1</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="table2_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+    <record id="action_alua_table1" model="ir.actions.act_window">
+        <field name="name">Table 1</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">test.table1</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new quotation, the first step of a new sale!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_test_table1"
+              name="Table 1"
+              action="action_alua_table1"
+              groups=""
+              parent="menu_test_table2_master"
+              sequence="0"/>
+
+</odoo>

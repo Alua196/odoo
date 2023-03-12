@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.test.table2,access_test_table2,first_module.model_test_table2,base.group_user,1,1,1,1
+access.test.table1,access_test_table1,first_module.model_test_table1,base.group_user,1,1,1,1

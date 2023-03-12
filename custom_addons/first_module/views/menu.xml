@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <menuitem id="menu_test_table"
+              name="Alua"
+              action=""
+              groups=""
+              sequence="0"/>
+
+    <menuitem id="menu_test_table2_master"
+              name="Table 2 details"
+              action=""
+              groups=""
+              parent="menu_test_table"
+              sequence="0"/>
+
+</odoo>

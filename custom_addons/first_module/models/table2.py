@@ -2,9 +2,9 @@ from odoo import api, fields, models
 
 
 
-class TestTable(models.Model):
-    _name = "test.table"
-    _description = "Test Table"
+class TestTable2(models.Model):
+    _name = "test.table2"
+    _description = "Test Table 2"
 
     field1 = fields.Char(string='field1')
     field2 = fields.Integer(string='field2')

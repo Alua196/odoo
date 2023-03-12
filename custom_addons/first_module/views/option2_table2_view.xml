@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <record id="action_alua_table2_option2" model="ir.actions.act_window">
+        <field name="name">Table 2 -> Option 2</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">test.table2</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="domain">[('field3', '=', 'option2')]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new quotation, the first step of a new sale!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_test_table2_option2"
+              name="Table 2 -> Option 2"
+              action="action_alua_table2_option2"
+              groups=""
+              parent="menu_test_table2_master"
+              sequence="0"/>
+
+</odoo>
