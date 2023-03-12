@@ -1,12 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="view_test_table1_form" model="ir.ui.view">
+        <field name="priority">1</field>
+        <field name="model">test.table1</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="table2_id"/>
+                            <field name="field1"/>
+                        </group>
+                        <group>
+                            <field name="field3"/>
+                            <field name="part_total"/>
+                        </group>
+                    </group>
+
+
+                    <notebook>
+                        <page string="Page 1" name="page1">
+                            <field name="part_ids">
+                                <tree editable="bottom">
+                                    <field name="part_id"/>
+                                    <field name="price_unit"/>
+                                    <field name="qty"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="part_id"/>
+                                        <field name="price_unit"/>
+                                        <field name="qty"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Page 2" name="page2">
+
+                        </page>
+                    </notebook>
+
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <record id="view_table1_tree" model="ir.ui.view">
             <field name="name">test.table1.tree</field>
             <field name="model">test.table1</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="table2_id"/>
+                    <field name="field1"/>
+                    <field name="field3"/>
+                    <field name="part_total"/>
                 </tree>
             </field>
         </record>
@@ -29,7 +78,7 @@
               name="Table 1"
               action="action_alua_table1"
               groups=""
-              parent="menu_test_table2_master"
+              parent="menu_test_table1_master"
               sequence="0"/>
 
 </odoo>

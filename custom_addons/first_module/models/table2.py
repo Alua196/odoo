@@ -1,3 +1,4 @@
+from datetime import date
 from odoo import api, fields, models
 
 
@@ -6,18 +7,19 @@ class TestTable2(models.Model):
     _name = "test.table2"
     _description = "Test Table 2"
 
-    field1 = fields.Char(string='field1')
-    field2 = fields.Integer(string='field2')
-    field3 = fields.Selection([('option1', 'option1'), ('option2', 'option2')], string='field3')
+    field1 = fields.Char(string='name')
+    fieldcomp = fields.Date(string='date')
+    field2 = fields.Integer(string='number', compute='_compute_age')
+    field3 = fields.Selection([('option1', 'option1'), ('option2', 'option2')], string='option')
+    # date_comp_m2o = fields.Date(string='m2o date')
+    tag_ids = fields.Many2many('test.table.tags', string='Tags')
 
-    # name = fields.Char(string='Account Type', required=True, translate=True)
-    # include_initial_balance = fields.Boolean(string="Bring Accounts Balance Forward", help="Used in reports to know if we should consider journal items from the beginning of time instead of from the fiscal year only. Account types that should be reset to zero at each new fiscal year (like expenses, revenue..) should not have this option set.")
-    # type = fields.Selection([
-    #     ('other', 'Regular'),
-    #     ('receivable', 'Receivable'),
-    #     ('payable', 'Payable'),
-    #     ('liquidity', 'Liquidity'),
-    # ], required=True, default='other',
-    #     help="The 'Internal Type' is used for features available on "\
-    #     "different types of accounts: liquidity type is for cash or bank accounts"\
-    #     ", payable/receivable is for vendor/customer accounts.")
+    def _compute_age(self):
+        for rec in self:
+            today = date.today()
+            if rec.fieldcomp:
+                rec.field2 = today.year - rec.fieldcomp.year
+            else:
+                rec.field2 = 0
+            # rec.field2 = date.today()
+            # return rec.today.year - rec.fieldcomp.year    #- ((self.field2.month, self.field2.day) < (self.date.month, self.date.day))

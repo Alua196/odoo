@@ -15,4 +15,16 @@
               parent="menu_test_table"
               sequence="0"/>
 
+    <menuitem id="menu_test_table1_master"
+              name="Table 1 details"
+              action=""
+              groups=""
+              parent="menu_test_table"
+              sequence="20"/>
+
+    <menuitem id="menu_configuration"
+              name="Configurations"
+              parent="menu_test_table"
+              sequence="100"/>
+
 </odoo>
