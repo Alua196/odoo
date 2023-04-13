@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.furniture.products,access_furniture_products,om_furniture.model_furniture_products,base.group_user,1,1,1,1
+access.furniture.categories,access_furniture_categories,om_furniture.model_furniture_categories,base.group_user,1,1,1,1

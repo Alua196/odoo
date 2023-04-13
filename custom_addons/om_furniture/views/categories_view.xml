@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_furniture_categories_tree" model="ir.ui.view">
+        <field name="name">furniture.categories.tree</field>
+        <field name="model">furniture.categories</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_furniture_categories_form" model="ir.ui.view">
+        <field name="priority">1</field>
+        <field name="model">furniture.categories</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+
+<!--                    <notebook>-->
+<!--                        <page string="Page 1" name="page1">-->
+
+<!--                        </page>-->
+<!--                        <page string="Page 2" name="page2">-->
+
+<!--                        </page>-->
+<!--                    </notebook>-->
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_furniture_categories" model="ir.actions.act_window">
+        <field name="name">Furniture Categories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">furniture.categories</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new quotation, the first step of a new sale!
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_furniture_categories"
+              name="Furniture Categories"
+              action="action_furniture_categories"
+              groups=""
+              parent="menu_categories"
+              sequence="0"/>
+
+
+</odoo>

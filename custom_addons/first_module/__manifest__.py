@@ -14,5 +14,5 @@
         'views/table_tags_view.xml',
     ],
     'application': True,
-    'sequence': -100
+    'sequence': -10
 }
